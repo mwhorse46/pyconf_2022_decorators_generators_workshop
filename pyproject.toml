@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "pyconf_2022_decorators_generators"
+version = "0.1.0"
+description = ""
+authors = ["satyam soni <ssoni@greenstreet.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^2.2.2"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^2.0.0"
+Django = "^4.1.3"
+djangorestframework = "^3.14.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
