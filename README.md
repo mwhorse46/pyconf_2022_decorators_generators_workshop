@@ -14,10 +14,10 @@ Decorators can help ease code development by making code reusable, implemeting s
 
 - Functional Decorators
   - Simple Decorators ( Basic )
-  - Multi Level Decorators
+  - Decorator with Arguments
 - Class based Decorators
   - Simple Descorators ( Basic )
-  - Multi Level Decorators
+  - Decorator with Arguments
   - Descriptors as Decorators
 - Decorator Chaining
 - Applications
@@ -50,6 +50,5 @@ Generators can help optimise code when you need to iterate over a large object a
 The above mentioned topics would cover constructs completely and would help attendee's gain confidence to use them in their source code.
 
 > **Note**:
-> _Link to code repository that will be used during the workshop: [https://github.com/satyamsoni2211/pyconf_2022_decorators_generators_workshop](https://github.com/satyamsoni2211/pyconf_2022_decorators_generators_workshop)._
-> _`README.md` file would contain link to PPT and other details regarding the constructs and important articles for future reference. Repository will contain the hands-on source code._
+> _Link to code repository that will be used during the workshop: [https://github.com/satyamsoni2211/pyconf_2022_decorators_generators_workshop](https://github.com/satyamsoni2211/pyconf_2022_decorators_generators_workshop)._ > _`README.md` file would contain link to PPT and other details regarding the constructs and important articles for future reference. Repository will contain the hands-on source code._
 > Candidate should hold basic knowledge for **`Python`**.
