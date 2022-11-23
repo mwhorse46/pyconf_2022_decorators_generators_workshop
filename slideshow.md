@@ -60,3 +60,24 @@ We may code along as we discuss this in detail. Below link would include all the
 > [https://github.com/satyamsoni2211/pyconf_2022_decorators_generators_workshop/tree/main/decorators](https://github.com/satyamsoni2211/pyconf_2022_decorators_generators_workshop/tree/main/decorators)
 
 ---
+
+# What is a `Generator` ?
+
+`generator functions` are a special kind of function that return a lazy iterator.
+
+---
+
+# Why `Generator` ?
+
+Lets consider this code segment
+
+```python
+def csv_reader(file_name):
+    file = open(file_name)
+    result = file.read().split("\n")
+    return result
+```
+
+This reads a `csv` file and returns list of the lines. This may be okay for small file but consider file to be `gb's` in size. Is it okay to load everything at once or read it lazily as and when required ?
+
+This is where generator helps you with, iterating over the object lazily.
