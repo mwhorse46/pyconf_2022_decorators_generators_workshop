@@ -21,13 +21,14 @@ Decorators can help ease code development by making code reusable, implemeting s
   - Descriptors as Decorators
 - Decorator Chaining
 - Applications
-  - Extending existing functionality using decorators
-  - Access Control using decorators (Security)
+  - Extending existing functionality using decorators.
+  - Access Control using decorators (Security).
   - Wrapping Function into Classes using Decorators.
   - Registering plugins using Decorators.
   - Dependancy Injection using Decorators.
   - Working of Route Decorator ( FastAPI & Flask ).
-  - Creating @property decorator
+  - Creating @property decorator.
+  - Converting generators to context managers.
 
 ### Generators
 
@@ -37,7 +38,8 @@ Generators can help optimise code when you need to iterate over a large object a
 
 - `yield` keyword.
 - Basic Generator Implementation.
-- `yield from` expressions in `generators`
+- `yield from` expressions in `generators`.
+- `generator` expressions.
 - Reading file using generators.
 - Generators advanced methods:
   - `send` method ( consumers )

@@ -46,3 +46,6 @@ def api_view(methods: List[Methods] = []):
 #         api_ = wrapped_api_view()
 #         return api_
 #     return decorator
+
+def hello():
+    return "Hi from this view"

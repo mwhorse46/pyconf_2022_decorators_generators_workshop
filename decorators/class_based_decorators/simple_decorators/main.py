@@ -1,0 +1,1 @@
+# simple class based decorator
