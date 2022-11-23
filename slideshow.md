@@ -81,3 +81,39 @@ def csv_reader(file_name):
 This reads a `csv` file and returns list of the lines. This may be okay for small file but consider file to be `gb's` in size. Is it okay to load everything at once or read it lazily as and when required ?
 
 This is where generator helps you with, iterating over the object lazily.
+
+---
+
+# `Generators` Over `Iterators` ?
+
+Though `Generators` are subclass of `Iterators`, they are more handy and compact. Unlike `Iterators`, which require `__iter__` and `__next__` methods, generators are simple functions with `yield` statement.
+
+```python
+>>> import collections,types
+>>> issubclass(types.Generator,collections.Iterator)
+>>> True
+```
+
+`Generators` also save local state of the function (variable binding, instruction sets ...) when execution pauses.
+
+---
+
+# Magical `yield` keyword
+
+When we call a generator function, it returns a `generator object` that can be stored in a variable. When we call `next()` on this generator object, execution starts and suspends till it reaches `yield` keyword.
+
+This also initializes the generator object, so that other generator methods like `send()`, `throw()` and `close()` can be called.
+
+`yield` can also consume values using `send()` method on `generator object`.
+
+**Note**: _We will need to initialize generator object by calling `next` method, before we can use `send()`_.
+
+---
+
+# Facts about `generators`
+
+- `generators` also gets exhausted like an `iterator` object and raises `StopIteration` Exception. When looped over, this exception is automatically handled by construct.
+
+- `generator objects` can only be used once i.e. they cannot be reused once exhausted.
+
+_Note: `StopIteration` is a natural exception that’s raised to signal the end of an iterator._
