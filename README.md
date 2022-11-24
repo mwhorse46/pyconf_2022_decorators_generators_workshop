@@ -42,7 +42,7 @@ Generators can help optimise code when you need to iterate over a large object a
 - `generator` expressions.
 - Reading file using generators.
 - Generators advanced methods:
-  - `send` method ( consumers )
+  - `send` method ( coroutines )
   - `throw` method ( Custom Exceptions )
   - `close` method ( Closing Generator )
 - Using generators with `context managers`.
