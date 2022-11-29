@@ -54,3 +54,5 @@ The above mentioned topics would cover constructs completely and would help atte
 > **Note**:
 > _Link to code repository that will be used during the workshop: [https://github.com/satyamsoni2211/pyconf_2022_decorators_generators_workshop](https://github.com/satyamsoni2211/pyconf_2022_decorators_generators_workshop)._ > _`README.md` file would contain link to PPT and other details regarding the constructs and important articles for future reference. Repository will contain the hands-on source code._
 > Candidate should hold basic knowledge for **`Python`**.
+
+PPT: [ Presentation - Decorators and Generators: Control your code with ease ](slideshow.pptx)
