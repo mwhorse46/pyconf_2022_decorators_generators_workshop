@@ -1,3 +1,7 @@
+**Introduced**: PEP 255 – Simple Generators (2001)
+
+**Link**: [https://peps.python.org/pep-0255/](https://peps.python.org/pep-0255/)
+
 Rules about generators:
 
 - Generator functions use `yield` keyword instead of `return`.
