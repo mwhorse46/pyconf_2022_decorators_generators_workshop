@@ -100,7 +100,9 @@ Though `Generators` are subclass of `Iterators`, they are more handy and compact
 
 # Magical `yield` keyword
 
-`yield` is a special keyword in python which turns a normal funtion into a `generator`. `yield` is also responsible for generating new value, returning generated value and suspending the execution until next iteration.
+`yield` is a special keyword in python which turns a normal function into a `generator`. `yield` is also responsible for generating new value, returning generated value and suspending the execution until next iteration.
+
+`yield` is like `return` in Python, except that it also saves the state of the function and resumes it when called upon.
 
 `yield` can also consume values using `send()` method on `generator object`.
 
