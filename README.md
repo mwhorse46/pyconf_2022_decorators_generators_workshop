@@ -1,16 +1,18 @@
 # `Decorators` and `Generators`: Control your code with ease
 
-`Decorators` are very powerful and super handy constructs in Python when it comes to writing reusable code and controlled flow. `Generators` comes in handy when you want to iterate over an object saving memory and preserving state. Both of these constructs are easy to implement and can save a lot of lines of code as well as optimize performance.
+`Decorators` are very powerful and handy constructs in Python. They shine when it comes to writing reusable code and controlled flows. `Generators` come in handy when you want to iterate over an object, save memory or preserve the state.
 
-Most Python developers know or would have heard of above mentioned `constructs` but only a few know how they are used. This becomes a `bottleneck` while working in frameworks or libraries, due to a lack of understanding and thus developers cannot make the best utilization of the existing code.
+Both of these constructs are easy to implement. Using them can reduce the number of lines of code, make it more readable and optimise performance.
 
-This workshop would help people to implement `decorators` and `generators` like a pro.
+Most Python developers know or would have heard of them. However, only a handful know how to use them well. While working with libraries and frameworks, this can become a `bottleneck` as developers lose out on the functionality they offer.
+
+This workshop aims to help people to implement and use `decorators` and `generators` like a pro.
 
 ### Decorators
 
 ---
 
-Decorators can help ease code development by making code reusable, implementing single entry points for the workflow, caching, registering plugins, etc. Below is the list of topics that would be covered:
+Decorators can help ease code development by making code reusable, implementing single entry points for the workflow, caching, registering plugins, etc. Below is the list of topics covered in the workshop:
 
 - Functional Decorators
   - Simple Decorators ( Basic )
