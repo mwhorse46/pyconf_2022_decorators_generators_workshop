@@ -1,6 +1,7 @@
-from inspect import Signature, signature, Parameter
+from functools import wraps
+from typing import Any, TypeVar
 from flask import Request, request
-from typing import Any, Callable, TypeVar
+from inspect import Signature, signature, Parameter
 
 T = TypeVar('T')
 
@@ -41,16 +42,35 @@ def get_signature(func) -> Signature:
     return signature(func)
 
 
-def isclass(cls) -> bool:
-    return cls.__class__ == type
+def is_base_class(cls_obj) -> bool:
+    """
+    Function to check of cls object is a class and 
+    subclass of BaseDependency
+    """
+    return cls_obj.__class__ == type \
+        and issubclass(cls_obj, BaseDependency)
 
 
-def check_for_qualification(obj):
-    iscls_ = isclass(obj)
-    isinstance_ = isinstance(obj, BaseDependency)
+def check_for_qualification(obj) -> tuple[bool, bool, bool]:
+    """Function to check if object qualifies 
+    to be injected
+
+    Args:
+        obj (Any): Object to be verified
+
+    Returns:
+        tuple[bool, bool, bool]: returns if object is qualified, is a class, is an instance
+    """
+    # check if obj is class
+    iscls_ = is_base_class(obj)
+    # checks if obj is an instance of BaseDependency
+    # only if obj is not a subclass of BaseDependency
+    isinstance_ = False if iscls_ else isinstance(obj, BaseDependency)
+    # check if object is not empty
+    # since parameter.default or parameter.annotation is passed
+    # if not set, it defaults to `Parameter.empty`
     if obj != Parameter.empty and \
-        ((iscls_ and issubclass(obj, BaseDependency))
-         or isinstance_):
+            (iscls_ or isinstance_):
         return True, iscls_, isinstance_
     return False, iscls_, isinstance_
 
@@ -58,6 +78,7 @@ def check_for_qualification(obj):
 def inject(func: callable):
     sig = get_signature(func=func)
 
+    @wraps(func)
     def __inner__(*args, **kwargs):
         k_ = {}
         for name, param in sig.parameters.items():

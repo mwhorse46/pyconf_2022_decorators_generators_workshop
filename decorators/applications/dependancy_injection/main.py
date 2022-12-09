@@ -17,5 +17,11 @@ def sample(name: str = Query("wow")):
     return f"Hi {name}"
 
 
+@app.get("/home")
+@inject
+def home(name: Query):
+    return f"Welcome {name}"
+
+
 if __name__ == "__main__":
     app.run(debug=True)
