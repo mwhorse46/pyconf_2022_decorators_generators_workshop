@@ -13,7 +13,7 @@ def handle(e: Exception):
 
 @app.get("/sample")
 @inject
-def sample(name: str = Query("wow")):
+def sample(name=Query("wow")):
     return f"Hi {name}"
 
 

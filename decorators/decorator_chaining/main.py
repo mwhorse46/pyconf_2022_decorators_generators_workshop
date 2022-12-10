@@ -2,26 +2,30 @@
 # we will cache and log arguments at once
 
 def cache(func):
-    pass
-    # c_ = {}
-    # func.cache_hit = 0
-    # func.cache_miss = 0
+    c_ = {}
 
-    # def __inner__(self, *args, **kwargs):
-    #     res = None
-    #     if v := c_.get((args, kwargs)):
-    #         func.cache_hit += 1
-    #         res = v
-    #     else:
-    #         func.cache_miss += 1
-    #         res = func(*args, **kwargs)
-    #         c_[(args, kwargs)] = res
-    #     return res
-    # return __inner__
+    def __inner__(*args):
+        res = None
+        if v := c_.get(args):
+            __inner__.cache_hit += 1
+            res = v
+        else:
+            __inner__.cache_miss += 1
+            res = func(*args)
+            c_[args] = res
+        return res
+    __inner__.cache_hit = 0
+    __inner__.cache_miss = 0
+    return __inner__
 
 
 def log(func):
-    pass
+    def __inner_log__(*args, **kwargs):
+        print(f"{args=} {kwargs=}")
+        func(*args, **kwargs)
+        __inner_log__.cache_hit = func.cache_hit
+        __inner_log__.cache_miss = func.cache_miss
+    return __inner_log__
 
 
 @log
@@ -31,7 +35,13 @@ def abc(*args):
 
 
 abc(1)
-abc(1, 2)
-abc(1, 2)
-abc(1, 2, 3)
-print(abc.cache_hit, abc.cache_miss)
+# abc(1, 2)
+# abc(1, 2)
+# abc(1, 2, 3)
+# print(abc.cache_hit, abc.cache_miss)
+
+# a = log(cache(abc))
+
+# f = cache(abc) # __inner__
+# b = log(f) # __inner__ , returns __inner_log__
+# abc == __inner_log__
